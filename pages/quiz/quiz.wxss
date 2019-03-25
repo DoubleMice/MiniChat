@@ -1,0 +1,4 @@
+/* pages/quiz/quiz.wxss */
+.foot {
+  margin: 20rpx;
+}

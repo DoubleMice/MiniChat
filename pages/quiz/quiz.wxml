@@ -1,0 +1,40 @@
+<!--pages/quiz/quiz.wxml-->
+<image src='/common/image/wave.gif' mode='widthFix' class='png' style='width:100%;height:486rpx'></image>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="padding">
+    <view wx:for="{{question}}" class="padding bg-white margin-top">
+      <view>{{item.id}}、{{item.question}}</view>
+      <radio-group class="radio-group" name="question{{item.id}}">
+        <view wx:for="{{item.answer}}" wx:for-item="answer" >
+          <radio class="orange" value="{{answer.key}}" name="option{{answer.key}}">
+          </radio>
+          <text>{{answer.value}}</text>
+        </view>
+      </radio-group>
+    </view>
+  </view>
+  <view class="flex justify-center">
+    <button class='cu-btn round lines-orange shadow foot' form-type='submit'>提交</button>
+    <button class='cu-btn round lines-orange shadow foot' form-type='reset'>重置</button>
+  </view>
+</form>
+
+<view class="cu-modal {{modalName=='result'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>你的性格😮：</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </view>
+    <view class='padding-xl'>
+      {{result}}
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class='action'>
+        <button class='cu-btn line-orange text-orange' bindtap='hideModal'>取消</button>
+        <button class='cu-btn bg-orange margin-left' bindtap='startchat'>开始匹配</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/profile/profile",
+    "pages/judge/judge",
+    "pages/quiz/quiz",
+    "pages/chat/chat"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#Ff9700",
+    "navigationBarTitleText": "ExampleTitle",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#0a2025",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "聊天",
+        "iconPath": "/common/image/message.png",
+        "selectedIconPath": "/common/image/message-fill.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人信息",
+        "iconPath": "/common/image/profile.png",
+        "selectedIconPath": "/common/image/profile-fill.png"
+      }
+    ]
+  }
+}

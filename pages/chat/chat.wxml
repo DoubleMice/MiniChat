@@ -1,0 +1,59 @@
+<view class="cu-chat">
+  <block wx:for="{{newsList}}" wx:for-item="msg">
+    <view wx:if="{{msg.status=='send'}}" class="cu-item self">
+      <view class="main">
+        <view class='content bg-orange shadow'>
+          <text>{{msg.message}}</text>
+        </view>
+      </view>
+      <view class="cu-avatar radius" style="background-image:url(http://n.sinaimg.cn/finance/crawl/0/w401h399/20181026/DQRI-hmxrkzw9451105.jpg);">
+      </view>
+      <view class='date'>{{msg.date}}</view>
+    </view>
+
+    
+    <view class="cu-item" wx:else>
+      <view class="cu-avatar radius" style="background-image:url(http://n.sinaimg.cn/finance/crawl/0/w401h399/20181026/DQRI-hmxrkzw9451105.jpg);">
+      </view>
+      <view class="main">
+        <view class='content bg-grey shadow'>
+          <text>{{msg.message}}</text>
+        </view>
+      </view>
+      <view class='date '>{{msg.date}}</view>
+    </view>
+  </block>
+</view>
+
+
+<view class="cu-bar foot input">
+  <view class='action'>
+    <text class='icon-sound text-grey'></text>
+  </view>
+  <input class='solid-bottom' bindinput='bindChange' value="{{input}}" maxlength="300" cursor-spacing="10"></input>
+  <view class='action'>
+    <text class='icon-roundaddfill text-grey'></text>
+  </view>
+  <button class='cu-btn bg-orange shadow' bindtap="send">发送</button>
+</view>
+
+
+<view class="cu-modal {{modalName=='notice'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>提示😉：</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </view>
+    <view class='padding-xl'>
+      匹配到的人可能不在线
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class='action'>
+        <button class='cu-btn line-orange text-orange' bindtap='hideModal'>收到</button>
+        <!-- <button class='cu-btn bg-orange margin-left' bindtap='startchat'>收到</button> -->
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+#************************   osx  ************************#
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
